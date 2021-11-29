@@ -46,6 +46,16 @@ function returnValue(test) {
 const result = returnValue();
 console.log(result);
 
+// Here is another example
+// This time I can declare a new variable and return it
+
+function increment(num) {
+  const newVariable = num + 1;
+  return newVariable;
+}
+
+console.log(increment(2));
+
 // You can "return early" from a function, and this is very useful for example when you need to meet a condition before going on with your program:
 
 function earlyReturn(tester) {
@@ -57,8 +67,21 @@ function earlyReturn(tester) {
 
 console.log(earlyReturn(false));
 
+// Another early return function example
+
+function passThis(something) {
+  if (something === undefined) {
+    return 'Pleeeeease add a value/argument';
+  }
+
+  return 'Hey, something was passed';
+}
+
+console.log(passThis());
+
 // You can only return one value from a function.
-// A "trick" to return multiple values from a function is to return an object, or an array, like this:
+// A "trick" to return multiple values from a function is to return an object, or an array.
+// I will declare an array with parameters in them and assign it to call/invoke function.
 
 function returnManyValues() {
   return ['Joker', 78];
