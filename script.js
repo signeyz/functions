@@ -35,6 +35,7 @@ function someAges(age1, age2 = 89) {
 someAges(10, 5000);
 */
 
+/*
 // Returning values from an argument
 // In your program you can assign the return value of the function to a variable, when you invoke the function.
 
@@ -79,6 +80,8 @@ function passThis(something) {
 
 console.log(passThis());
 
+
+
 // You can only return one value from a function.
 // A "trick" to return multiple values from a function is to return an object, or an array.
 // I will declare an array with parameters in them and assign it to call/invoke function.
@@ -89,3 +92,139 @@ function returnManyValues() {
 
 const [name, age] = returnManyValues();
 console.log(returnManyValues());
+*/
+
+/*
+// Arrow function
+// Arrow functions are anonymous. We must assign them to a variable.
+
+const arrowFunc = () => {
+  //do something
+};
+
+// to call/invoke an arrow function
+arrowFunc();
+
+// If the function body contains just a single statement, you can omit the parentheses and write all on a single line.
+
+const singLineArrowFunc = () => 'Hiya';
+console.log(singLineArrowFunc());
+
+// Parameters are passed in the parentheses.
+
+const paramArrowFunc = (test, test2) => console.log(test, test2);
+
+console.log(paramArrowFunc(2, 4));
+
+// Arrow function does not need to have the RETURN keyword
+
+const noNeedToReturn = () => 'test';
+console.log(noNeedToReturn());
+
+// Like with regular functions, we can have default parameters, in case they are not passed.
+
+const defaultParams = (param1 = 'blue', param2 = 100) => {
+  return param1 + ' ' + param2;
+};
+
+console.log(defaultParams());
+*/
+
+/*
+// Nesting functions
+// A function inside a function
+
+// Arrow function can also have another arrow function or regular function inside of it.
+
+// First arrow function
+const increment = (num) => {
+  return num + 1;
+};
+
+console.log(increment(5));
+
+// Second arrow function
+const test = () => {
+  const num = 1;
+
+  console.log(increment(num));
+};
+
+test();
+*/
+
+/*
+// IIFE - Immediately Invoked Function Expression
+
+(()=>{
+
+})
+*/
+
+// Recursion
+/*
+function greet() {
+  // console.log('Hello');
+  greet();
+}
+
+greet();
+*/
+// Another example of Recursion looping, which is what recursion is with functions
+// I can just put return to stop it there once it is greater than 10 to stop the loop
+
+/*
+function printNumber(num) {
+  if (num > 10) return;
+  console.log(num);
+  printNumber(num + 1);
+}
+
+printNumber(1);
+*/
+// Keep in mind I can do this with a FOR loop, in fact I can have it add all my numbers in a loop
+
+// let sum = 0;
+
+// for (let i = 0; i <= 10; i++) {
+//   sum = sum + i;
+// }
+
+// console.log(sum);
+
+// A recursion example that loops through numbers
+// function sumNumbersBelow(number) {
+//   if (number <= 0) return 0;
+//   return number + sumNumbersBelow(number - 1);
+// }
+
+// console.log(sumNumbersBelow(2));
+
+// Convert this while loop into a recursion
+const person = {
+  name: 'Kyle',
+  friend: {
+    name: 'Joe',
+    friend: {
+      name: 'Sally',
+    },
+  },
+};
+
+// let currentPerson = person;
+
+// while (currentPerson != null) {
+//   console.log(currentPerson.name);
+//   currentPerson = currentPerson.friend;
+// }
+
+// printNames(person)
+
+function printNames(person) {
+  // this return is to escape out of this function
+  if (person == null) return;
+  console.log(person.name);
+  printNames(person.friend);
+}
+
+printNames(person);
