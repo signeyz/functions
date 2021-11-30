@@ -192,6 +192,7 @@ printNumber(1);
 
 // console.log(sum);
 
+/*
 // A recursion example that loops through numbers
 // function sumNumbersBelow(number) {
 //   if (number <= 0) return 0;
@@ -200,7 +201,7 @@ printNumber(1);
 
 // console.log(sumNumbersBelow(2));
 
-// Convert this while loop into a recursion
+// Convert this while loop into a recursion function
 const person = {
   name: 'Kyle',
   friend: {
@@ -211,6 +212,7 @@ const person = {
   },
 };
 
+// Here is a typical WHILE loop for the object above
 // let currentPerson = person;
 
 // while (currentPerson != null) {
@@ -228,3 +230,82 @@ function printNames(person) {
 }
 
 printNames(person);
+
+// Flavio Recursion example with numbers
+
+function test(num) {
+  num = num - 1;
+  console.log(num);
+
+  if (num == 0) return 0;
+
+  test(num);
+}
+
+// Call my function
+test(2);
+
+
+
+// Flavio Recursion example with strings
+
+function test2(string) {
+  console.log(string);
+  string = string.substring(0, string.length - 1);
+  if (string.length === 0) return '';
+  test2(string);
+}
+
+// call it
+test2('hello');
+
+
+function test2(string) {
+  console.log(string);
+
+  if (string.length === 1) return '';
+
+  test2(string.substring(0, string.length - 1));
+}
+
+// call it
+test2('funky');
+*/
+
+// Array Manipulation/method
+// Let's start with .map() method which is surveying this whole array
+
+// const a = [1, 2, 3];
+
+// a.map((item) => {
+//   console.log(item);
+// });
+
+// console.log(a);
+
+// Next is the .filter() method
+// Here I can choose which item I want filtered.
+// Lets see if I can even numbers in the array
+
+// const b = [1, 2, 3, 4, 5, 6];
+
+// const c = b.filter((item) => {
+//   if (item % 2 === 0) return true;
+//   return false;
+// });
+
+// console.log(c);
+
+const lastArray = [10, 20, 30, 40];
+
+const only = lastArray
+  .filter((item) => {
+    return item === 30;
+  })
+  .map((item) => item * 2);
+
+console.log(only);
+
+// const filterLastOut = lastArray.filter((item) => item === 40).shift();
+
+// console.log(filterLastOut);
