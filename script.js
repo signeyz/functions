@@ -296,16 +296,53 @@ test2('funky');
 
 // console.log(c);
 
-const lastArray = [10, 20, 30, 40];
+// const lastArray = [10, 20, 30, 40];
 
-const only = lastArray
-  .filter((item) => {
-    return item === 30;
-  })
-  .map((item) => item * 2);
+// const only = lastArray
+//   .filter((item) => {
+//     return item === 30;
+//   })
+//   .map((item) => item * 2);
 
-console.log(only);
+// console.log(only);
 
 // const filterLastOut = lastArray.filter((item) => item === 40).shift();
 
 // console.log(filterLastOut);
+
+// The reduce() method
+// the reduce() method on an array allows us to transform that array to anything else. Like a number, or a boolean.
+
+// Short Circuit Operator
+// The or || operator will always be detected early on by JS regardless of the other value
+
+// true || false; this will always be true, regardless of the other value being false
+
+// console.log(printFalse() && printTrue());
+
+// function printTrue() {
+//   console.log('true');
+//   return true;
+// }
+
+// function printFalse() {
+//   console.log('false');
+//   return false;
+// }
+
+// Scenario 1 - short circuit is a great way to create default values.
+
+function getName(name) {
+  name = name || 'Default';
+  console.log(name);
+}
+
+getName();
+
+// Scenario 2 - short circuit is a great way to check the object
+
+const person = {
+  name: 'Tony',
+};
+
+console.log(person && person.name && person.address);
