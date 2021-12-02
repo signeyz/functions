@@ -313,7 +313,7 @@ test2('funky');
 // The reduce() method
 // the reduce() method on an array allows us to transform that array to anything else. Like a number, or a boolean.
 
-// Short Circuit Operator
+// Short Circuit Operator - WebDev Simplified
 // The or || operator will always be detected early on by JS regardless of the other value
 
 // true || false; this will always be true, regardless of the other value being false
@@ -330,6 +330,7 @@ test2('funky');
 //   return false;
 // }
 
+/*
 // Scenario 1 - short circuit is a great way to create default values.
 
 function getName(name) {
@@ -346,3 +347,60 @@ const person = {
 };
 
 console.log(person && person.name && person.address);
+*/
+
+// reduce method
+/*
+const a = [1, 2, 3, 4];
+
+const reducer = a.reduce((accumulator, item, index) => {
+  return accumulator + item;
+}, 0);
+
+console.log(reducer);
+
+// accummulator + item sequence/flow
+// 0 + 1 = 1
+// 1 + 2 = 3
+// 3 + 3 = 6
+// 6 + 4 = 10
+*/
+
+// sort() is used to sort arrays alphabetically
+/*
+const alphabeticOrder = ['d', 'c', 'b', 'a'];
+
+console.log(alphabeticOrder.sort());
+
+const numOrder = [10, 2, -3, 5];
+
+console.log(numOrder.sort());
+
+// There is also reverse() method
+
+const reverseOrder = ['a', 'b', 'c', 'd'];
+
+console.log(reverseOrder.reverse());
+
+// Sort() method using a function
+
+const numy = [40, 30, 50, 4, 110];
+
+numy.sort((a, b) => {
+  return a > b ? 1 : -1;
+});
+
+console.log(numy);
+*/
+
+// find()
+
+const alpha = [{ value: 1, value: 2, value: 3 }];
+
+const found = alpha.find((index) => {
+  if (index.value === 2) {
+    return true;
+  }
+});
+
+console.log(found);
